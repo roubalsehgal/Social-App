@@ -1,0 +1,117 @@
+* {
+	box-sizing: border-box;
+}
+
+button {
+	background-color: transparent;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+
+input {
+	background-color: transparent;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+input[type='submit'] {
+	cursor: pointer;
+}
+input::-webkit-input-placeholder {
+	font-size: 0.85rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.1rem;
+	color: #fb7c0d;
+}
+input:-ms-input-placeholder {
+	font-size: 0.85rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.1rem;
+	color: #fb7c0d;
+}
+input::-ms-input-placeholder {
+	font-size: 0.85rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.1rem;
+	color: #fb7c0d;
+}
+input::placeholder {
+	font-size: 0.85rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.1rem;
+	color: #fb7c0d;
+}
+
+.forms_title {
+	margin-bottom: 45px;
+	font-size: 1.5rem;
+	font-weight: 500;
+	line-height: 1em;
+	text-transform: uppercase;
+	color: #424874;
+	letter-spacing: 0.1rem;
+}
+.forms_field:not(:last-of-type) {
+	margin-bottom: 20px;
+}
+.forms_field-input {
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding: 6px 20px 6px 6px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+	font-weight: 300;
+	color: #a6b1e1;
+	letter-spacing: 0.1rem;
+	transition: border-color 0.2s ease-in-out;
+}
+.forms_field-input:focus {
+	border-color: #a6b1e1;
+}
+.forms_buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 35px;
+}
+.forms_buttons-action {
+	background-color: #424874;
+	border-radius: 3px;
+	padding: 10px 35px;
+	font-size: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	transition: background-color 0.2s ease-in-out;
+}
+.forms_buttons-action:hover {
+	background-color: #a6b1e1;
+}
+.signup {
+	position: absolute;
+	top: 20px;
+	left: -80px;
+	width: calc(100% - 80px);
+	opacity: 1;
+	transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out,
+		-webkit-transform 0.5s ease-in-out;
+	transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out,
+		transform 0.5s ease-in-out;
+	transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out,
+		transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.signup {
+	-webkit-transform: translate3d(120px, 0, 0);
+	transform: translate3d(120px, 0, 0);
+}
+.signup .forms_buttons {
+	justify-content: flex-end;
+}

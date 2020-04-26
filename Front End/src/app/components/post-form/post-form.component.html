@@ -1,0 +1,45 @@
+<div class="row"> 
+	<div class="col s12 m12 l10">
+		<div class="card postDiv">
+			<div class="card-content" style="padding: 15px;">
+				<form [formGroup]="postForm" novalidate (ngSubmit)="SubmitPost()">
+					<div class="formDiv">
+						<textarea
+							placeholder="Whats on your mind"
+							formControlName="post"
+							class="materialize-textarea"
+						></textarea>
+						<div class="file-field input-field" style="margin: 0px;">
+							<div class="row">
+								<div class="col s6">
+									<div class="btn addImageBtn">
+										<span>
+											<span class="material-icons">
+												perm_media
+											</span>
+											<span>
+												Media
+											</span>
+										</span>
+										<input
+											type="file"
+											ng2FileSelect
+											[uploader]="uploader"
+											(onFileSelected)="OnFileSelected($event)"
+										/>
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" />
+									</div>
+								</div>
+								<div class="col s6">
+									<button class="btn postBtn">Post</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

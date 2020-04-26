@@ -1,0 +1,107 @@
+<div class="signup">
+	<h2 class="forms_title">Sign Up</h2>
+		<form class="forms_form" (ngSubmit) = "signupUser(registerForm)" #registerForm = "ngForm">
+			
+			<!-- Input Name -->
+			<div class="forms_field">
+				<div class="input-field" >
+					<label for="user_name">Full Name</label>
+						<input id="user_name" type="text" class="validate"
+						minlength="3"
+						name="username"
+						ngModel
+						#username="ngModel"
+						matInput
+						required
+						style="color: white;"
+						>
+		   			<span style="margin-left:-8px;"class="helper-text" data-error="Name should be minimum of 3 characters"></span>
+		 		</div>
+			</div>
+			<!-- Input Name -->
+			
+			<!-- Input Mob No. -->
+			<div class="forms_field">
+				<div class="input-field">
+		   			<label for="last_name">Mobile Number</label>
+						<input id="mobile" type="text" class="validate"
+						minlength="10"
+						name="mob"
+						ngModel 
+						#mob = "ngModel" 
+						pattern = "^((\\+91-?)|0)?[0-9]{10}$"
+						style="color: white;"
+						>
+			   		<span style="margin-left:-8px;"class="helper-text" data-error="Invalid number!"></span>
+	   			</div>
+			</div>
+			<!-- Input Mob No. -->
+			
+			<!-- Input E-mail -->
+			<div class="forms_field">
+				<div class="input-field">
+					<label for="last_name">Email</label>
+						<input 
+						id="email"
+						type="email"
+						matInput 
+						name="email"
+						ngModel
+						#email = "ngModel" 
+						pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+						class="validate"
+						style="color: white;"
+						>
+					<span style="margin-left:-8px;"class="helper-text" data-error="Invalid E-mail!"></span>
+	   			</div>
+			</div>
+			<!-- Input E-mail -->
+
+			<!-- Input Password -->
+			<div>
+				<div class="input-field">
+					<label for="last_name">Password</label>
+			   			<input 
+			   			type="password"   
+						minlength="6"
+						name="password"
+						ngModel 
+						#password = "ngModel" 
+						matInput 
+						class="validate"
+						style="color: white;"
+						>
+			   		<span style="margin-left:-8px;"class="helper-text" data-error="Invalid Password!"></span>
+			   	</div>
+			</div>
+			<!-- Input Password -->
+
+			<!-- Gender -->
+			<p>
+				<label>Gender</label><br>
+
+				<!-- Male -->
+				<label>
+			   		<input class="with-gap" name="gender" value="Male" ngModel 
+			   			#gender = "ngModel"  type="radio" style="color: white;"/>
+			   		<span for="Male">Male</span>
+				</label>
+				
+				<!-- Female -->
+				<label>
+					<input class="with-gap" name="gender" ngModel 
+					#gender = "ngModel"  value="Female"  type="radio" style="color: white;"/>
+					<span for="Female">Female</span>
+				</label>
+			</p>
+			<!-- Gender -->
+			
+			<!-- SignUp -->
+			<div class="forms_buttons">
+				<button class="forms_buttons-action"
+				mat-raised-button 
+				type="submit" color="primary">Sign Up</button>
+			</div>
+			<!-- SignUp -->
+		</form>
+</div>

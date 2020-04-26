@@ -1,0 +1,44 @@
+<app-toolbar></app-toolbar>
+
+<div class="container" style="margin-top:30px; width: 90%;">
+	<div class="row">
+		<div class="col s12 m4 l3">
+			<app-side></app-side>
+		</div>
+
+		<div class="col s12 m8 l9" >
+			<ul class="collection col s12 m10" id="ntf-list" *ngIf="notifications.length > 0">
+				<li class="collection-item avatar" *ngFor="let data of notifications">
+					<img
+						class="circle"
+						src="https://res.cloudinary.com/anheart/image/upload/v{{
+							data.senderId.picVersion
+						}}/{{ data.senderId.picId }}"
+						alt="Image not Available"
+					/>
+					<span class="title">{{ data.message }}</span>
+					<a class="secondary-content">
+						<i class="material-icons" *ngIf="!data.read">brightness_1</i>
+						<i class="material-icons" *ngIf="data.read">panorama_fish_eye</i>
+					</a>
+					<p class="time">{{ TimeFromNow(data.created) }}</p>
+					<div style="margin-top: 7px;">
+						<i
+							class="material-icons"
+							(click)="MarkNotification(data)"
+							[ngClass]="data.read ? 'disabled' : 'notDisabled'"
+							>check</i
+						>
+						<i class="material-icons" (click)="DeleteNotification(data)"
+							>delete_forever</i
+						>
+					</div>
+				</li>
+			</ul>
+ 
+			<div class="row" *ngIf="notifications.length <= 0">
+				<h3 class="text">You have no notifications</h3>
+			</div>
+		</div>
+	</div>
+</div>

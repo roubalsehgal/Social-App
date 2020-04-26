@@ -1,0 +1,27 @@
+#ntf-list{
+	box-shadow: 0;
+  	transition: box-shadow 0.5s;
+}
+
+#ntf-list:hover{
+	box-shadow: 0 0 10px grey;
+}
+.material-icons {
+	color: #d7385e;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.time {
+	margin-bottom: 10px;
+	font-style: italic;
+}
+
+.text {
+	text-align: center;
+	font-size: 18px;
+}
+
+.disabled {
+	color: #c0c0c0;
+}

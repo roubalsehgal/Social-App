@@ -1,0 +1,62 @@
+a {
+	color: black;
+}
+
+.active a {
+	color: white !important;
+}
+
+.active {
+	background-color: #424874 !important;
+}
+
+.material-icons {
+	color: #424874;
+}
+
+.active .material-icons {
+	color: white;
+}
+
+.row span {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.num {
+	margin: 0 !important;
+	color: #424874;
+	font-weight: bold;
+	font-size: 16px;
+}
+#donate {
+	position: relative;
+	display:block;
+	height: 45px;
+	width: 150px;
+	margin: 10px 7px;
+	margin-left: 38px;
+	padding: 5px 5px;
+	font-weight: 700;
+	font-size: 15px;
+	letter-spacing: 2px;
+	color: #383736;
+	border: 2px #383736 solid;
+	border-radius: 4px;
+	text-transform: uppercase;
+	outline: 0;
+	overflow:hidden;
+	background: none;
+	z-index: 1;
+	cursor: pointer;
+	transition:         0.08s ease-in;
+	-o-transition:      0.08s ease-in;
+	-ms-transition:     0.08s ease-in;
+	-moz-transition:    0.08s ease-in;
+	-webkit-transition: 0.08s ease-in;
+}
+
+#donate:hover{
+	background-color: #424874;
+	color: white;
+}

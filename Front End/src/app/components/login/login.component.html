@@ -1,0 +1,52 @@
+<div class="login">
+	<h2 class="forms_title">Login</h2>
+	<form class="forms_form" (ngSubmit) = "loginUser(loginForm)" #loginForm = "ngForm">
+		
+		<!-- Input Email -->
+		<div class="forms_field">
+			<div class="input-field">
+				<label for="last_name">Email</label>
+					<input 
+					id="email"
+					type="email"
+					matInput  
+					name="email"
+					ngModel
+					#email = "ngModel" 
+					pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+					class="validate"
+					style="color: white;">
+				<span style="margin-left: -8px;"class="helper-text" data-error="Invalid E-mail!"></span>
+		  	</div>
+		</div>
+		<!-- Input Email -->
+
+		<!-- Input Password -->
+		<div class="forms_field">
+			<div class="input-field">
+				<label for="last_name">Password</label>
+					<input 
+					type="password"   
+					minlength="6"
+					name="password"
+					ngModel 
+					#password = "ngModel" 
+					matInput 
+					class="validate"
+					style="color: white;"
+					>
+				<span style="margin-left:-8px;"class="helper-text" data-error="Wrong Password!"></span>
+			</div>
+		</div>
+		<!-- Input Password -->
+		
+		<!-- Forgot Password -->
+		<div class="forms_buttons">
+			<button type="button" class="forms_buttons-forgot">
+				Forgot password?
+			</button>
+			<button routerLink="/streams"  class="forms_buttons-action">Login</button>
+		</div>
+		<!-- Forgot Password -->
+	</form>
+</div>

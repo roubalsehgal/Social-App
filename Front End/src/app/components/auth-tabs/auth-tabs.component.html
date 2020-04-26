@@ -1,0 +1,35 @@
+<section class="user">
+	<div class="user_options-container">
+		<div class="user_options-text">
+
+			<!-- SignUp -->
+			<div class="user_options-unregistered">
+				<h2 style="color:white;" class="user_unregistered-title">
+					Don't have an account?
+				</h2>
+				<p style="color:#a6b1e1" class="user_unregistered-text">Create One!</p>
+				<button class="user_unregistered-signup" id="signup-button" (click)="onSignup()">
+					Sign up
+				</button>
+			</div>
+			<!-- SignUp -->
+
+			<!-- Login -->
+			<div class="user_options-registered">
+				<h2 style="color:white;" class="user_registered-title">
+					Have an account?
+				</h2>
+				<p style="color:#a6b1e1" class="user_registered-text">Welcome back!</p>
+				<button class="user_registered-login" id="login-button" (click)="onLogin()">
+					Login
+				</button>
+			</div>
+			<!-- Login -->
+		</div>
+
+		<div class="user_options-forms" id="user_options-forms">
+			<app-login class="login"></app-login>
+			<app-signup class="signup"></app-signup>
+		</div>
+	</div>
+</section>

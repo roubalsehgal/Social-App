@@ -1,0 +1,123 @@
+<div class="row">
+	<div class="col s12">
+		<div class="row">
+			<div class="card">
+				<div class="valign-wrapper" style="background-color: #424874;">
+					
+					<div class="col s12 imgCol">
+						<img
+							*ngIf="receiverData"
+							src="https://res.cloudinary.com/anheart/image/upload/v{{
+								receiverData.picVersion
+							}}/{{ receiverData.picId }}"
+							class="imgCircle"
+						/>
+					</div>
+					<div class="row">
+						<div class="col s10 nameCol">
+							<span style="color: white;">
+								{{ receiver }}
+								<i 	style="color:rgb(21, 206, 21);box-sizing:inherit;content:'\f111'" class="fa fa-circle"></i>
+								<p class="isOnline" *ngIf="isOnline && !typing">Online</p>
+								<p class="isOnline" *ngIf="typing">is typing ...</p>
+							</span>
+						</div>
+					</div>
+					<div style="cursor: pointer;">
+						<span title="close" style="margin-left: 650px;"[routerLink] = "['/streams']"><i class="fa fa-close" style="font-size:2rem; color: white;" aria-hidden="true"></i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col s12 rowDiv" >
+		<div id="background-wrap">
+			<div class="bubble x1"></div>
+		    <div class="bubble x2"></div>
+		    <div class="bubble x3"></div>
+		    <div class="bubble x4"></div>
+		    <div class="bubble x5"></div>
+		    <div class="bubble x6"></div>
+		    <div class="bubble x7"></div>
+		    <div class="bubble x8"></div>
+		    <div class="bubble x9"></div>
+			<div class="bubble x10"></div>
+		</div>
+
+		<div class="row">
+			<div class="col s12">
+				<div style="text-align:center;margin-top:10px;">
+					
+					<img src="https://res.cloudinary.com/anheart/image/upload/v{{
+						user.picVersion
+					}}/{{ user.picId }}"
+					class="imgCircle"/>
+					<img  src="https://res.cloudinary.com/anheart/image/upload/v{{
+						receiverData.picVersion
+					}}/{{ receiverData.picId }}"
+					class="imgCircle" />
+					<br />
+					<span>{{user.username}}, <br> Say hi to your friend {{receiver}}</span>
+				
+				</div>
+				<div class="message-wrapper" *ngFor="let message of messagesArray">
+					<div
+						class="right"
+						*ngIf="
+							user.username !== receiver && user.username !== message.senderName
+						"
+						>
+					
+						<div class="chat-bubble left slide-left">
+							<div class="message">{{ message.body }}</div>
+						</div>
+					</div>
+
+					<div class="left" *ngIf="user.username === message.senderName">
+						<div class="chat-bubble right slide-right">
+							<div class="message">{{ message.body }}</div>
+						</div>
+					</div>
+
+					<div class="cf"></div>
+				</div>
+				<div class="right" *ngIf="typing">
+					<div class="typing-indicator">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col s12" style="margin: 0;">
+		<div class="row">
+			<div class="card" style="border-radius: 20px;">
+				
+				<div class="inputRow">
+					
+					<form (ngSubmit)="SendMessage()">
+						<div class="textarea_text col s10">
+						<div class="input-field inputField col s10">
+							<textarea  placeholder="Remember, be nice!" cols="30" rows="5"
+								 name="message"
+								(keypress)="IsTyping()"
+								[(ngModel)]="message"
+								class="materialize-textarea inputBox"
+								
+							></textarea>
+						
+						</div>
+					</div>
+						<div class="input-field col m1" style="width: max-content;">
+							<button class="suffix btn"><i style="margin-left:0px; border-radius: 5px;"class="fa fa-paper-plane" aria-hidden="true"></i></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
